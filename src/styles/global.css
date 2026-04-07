@@ -17,8 +17,8 @@
   --bg-card:    #141415;
   --bg-hover:   #1c1c1e;
   --text:       #e4e4e7;
-  --text-muted: #8b8b95;  /* was #71717a */
-  --text-dim:   #52525b;  /* was #3f3f46 */
+  --text-muted: #8b8b95;
+  --text-dim:   #52525b;
   --accent:     #818cf8;
   --accent-dim: rgba(129, 140, 248, 0.12);
   --border:     #27272a;
@@ -34,8 +34,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* In global.css, replace the existing body background line */
 
 /* BEFORE: */
 /*   background: var(--bg); */
@@ -54,11 +52,10 @@ body {
 
 /*
   Tuning guide — adjust the two opacity values to taste:
-  
   0.04 / 0.03  →  barely there, only visible on large monitors
-  0.07 / 0.05  →  recommended — noticeable but doesn't compete (start here)
+  0.07 / 0.05  →  recommended — noticeable but doesn't compete with content
   0.10 / 0.07  →  confident, clearly visible
-  0.15 / 0.10  →  what you see in the preview screenshot — too strong for production
+  0.15 / 0.10  →  too strong for production
 */
 
 a {
@@ -319,4 +316,117 @@ img {
   .project-row { flex-wrap: wrap; }
   .project-row-name { min-width: auto; width: 100%; }
   .footer { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* ============================================
+   Enhancements (animations, effects, etc.)
+   ============================================ */
+
+/* 1. Hero name gradient — white fading to accent
+      Subtle but it catches the eye. */
+.hero-name {
+  background: linear-gradient(135deg, #e4e4e7 30%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-name::after {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-left: 4px;
+  vertical-align: baseline;
+  position: relative;
+  bottom: 4px;
+}
+
+/* Hero name reveal: L. → Luis Rodriguez. */
+.hero-reveal {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  vertical-align: bottom;
+  white-space: nowrap;
+  transition: max-width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-reveal.show {
+  max-width: 600px;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal {
+    max-width: none;
+    transition: none;
+  }
+}
+
+/* 2. Section headings — accent marker line
+      Gives every section a signature look. */
+.heading-section::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 1px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* 3. Card screenshot zoom on hover
+      Makes the cards feel alive. */
+.card-image img {
+  transition: transform 0.4s ease;
+}
+.card:hover .card-image img {
+  transform: scale(1.04);
+}
+
+/* 4. Link underline animation
+      Underline draws in from left on hover. */
+.about-text a,
+.card-title a {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+.about-text a:hover,
+.card-title a:hover {
+  text-decoration: none;
+  background-size: 100% 1px;
+}
+
+/* 5. Other projects row hover
+      Subtle highlight on hover — feels interactive. */
+.project-row {
+  margin-left: -8px;
+  margin-right: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.project-row:hover {
+  background: rgba(129, 140, 248, 0.04);
+}
+
+/* 6. Film grain texture
+      Barely visible — adds tactile depth to the flat dark bg.
+      Remove this if you prefer perfectly clean. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
