@@ -17,8 +17,8 @@
   --bg-card:    #141415;
   --bg-hover:   #1c1c1e;
   --text:       #e4e4e7;
-  --text-muted: #71717a;
-  --text-dim:   #3f3f46;
+  --text-muted: #8b8b95;  /* was #71717a */
+  --text-dim:   #52525b;  /* was #3f3f46 */
   --accent:     #818cf8;
   --accent-dim: rgba(129, 140, 248, 0.12);
   --border:     #27272a;
@@ -35,13 +35,31 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* In global.css, replace the existing body background line */
+
+/* BEFORE: */
+/*   background: var(--bg); */
+
+/* AFTER: */
 body {
   font-family: var(--font);
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(129, 140, 248, 0.07), transparent),
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(99, 102, 241, 0.05), transparent),
+    var(--bg);
 }
+
+/*
+  Tuning guide — adjust the two opacity values to taste:
+  
+  0.04 / 0.03  →  barely there, only visible on large monitors
+  0.07 / 0.05  →  recommended — noticeable but doesn't compete (start here)
+  0.10 / 0.07  →  confident, clearly visible
+  0.15 / 0.10  →  what you see in the preview screenshot — too strong for production
+*/
 
 a {
   color: var(--accent);
