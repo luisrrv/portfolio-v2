@@ -1,0 +1,25 @@
+---
+import projects from '../content/projects.json';
+---
+
+<section class="section" id="other">
+  <h2 class="heading-section">Other Projects</h2>
+  <div class="project-list">
+    {projects.other.map((project) => (
+      <div class="project-row">
+        <span class="project-row-name">{project.title}</span>
+        <span class="project-row-stack">{project.stack}</span>
+        <div class="project-row-links">
+          {project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener">
+              Live ↗
+            </a>
+          )}
+          <a href={project.sourceUrl} target="_blank" rel="noopener">
+            Source ↗
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

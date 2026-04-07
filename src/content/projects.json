@@ -1,0 +1,48 @@
+{
+  "featured": [
+    {
+      "title": "FootyPulse",
+      "description": "Follow football players and get daily stat digests via automated pipelines.",
+      "image": "/images/footypulse.webp",
+      "tags": ["Next.js", "Supabase", "GitHub Actions"],
+      "liveUrl": "https://footypulse.netlify.app",
+      "sourceUrl": "https://github.com/luisrrv/footy-pulse"
+    },
+    {
+      "title": "Web-to-LINE Chat Relay",
+      "description": "Real-time web chat interface that routes messages to LINE with two-way replies.",
+      "image": "/images/chat-relay.webp",
+      "tags": ["React", "Node.js", "WebSocket"],
+      "liveUrl": "https://anon2me.netlify.app",
+      "sourceUrl": "https://github.com/luisrrv/chat2me"
+    },
+    {
+      "title": "Bicho Bot",
+      "description": "Automated X/Twitter bot that posts twice daily and engages with related content.",
+      "image": "/images/bicho-bot.webp",
+      "tags": ["Python", "AWS Lambda", "Twitter API"],
+      "liveUrl": "https://twitter.com/bicho_bot",
+      "sourceUrl": "https://github.com/luisrrv/bicho-bot-lambda"
+    }
+  ],
+  "other": [
+    {
+      "title": "Ally Maps",
+      "stack": "Rails · PostgreSQL · Google Maps",
+      "liveUrl": "https://allymaps.herokuapp.com/",
+      "sourceUrl": "https://github.com/luisrrv/allymaps"
+    },
+    {
+      "title": "Rubber Ducking",
+      "stack": "Chrome Extension · JavaScript",
+      "liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
+      "sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
+    },
+    {
+      "title": "Reflect",
+      "stack": "React · Three.js",
+      "liveUrl": "https://rodluis.com/#/reflect",
+      "sourceUrl": "https://github.com/luisrrv/portfolio/blob/main/src/pages/Reflect.tsx"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+  liveUrl: string;
+  sourceUrl: string;
+}
+
+const { title, description, image, tags, liveUrl, sourceUrl } = Astro.props;
+---
+
+<article class="card">
+  <div class="card-image">
+    <img
+      src={image}
+      alt={`Screenshot of ${title}`}
+      width="800"
+      height="500"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc">{description}</p>
+    <div class="card-tags">
+      {tags.map((tag) => (
+        <span class="tag">{tag}</span>
+      ))}
+    </div>
+    <div class="card-links">
+      <a href={liveUrl} target="_blank" rel="noopener">
+        Live ↗
+      </a>
+      <a href={sourceUrl} target="_blank" rel="noopener">
+        Source ↗
+      </a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import projects from '../content/projects.json';
+---
+
+<section class="section" id="work">
+  <h2 class="heading-section">Featured Work</h2>
+  <div class="project-grid">
+    {projects.featured.map((project) => (
+      <ProjectCard
+        title={project.title}
+        description={project.description}
+        image={project.image}
+        tags={project.tags}
+        liveUrl={project.liveUrl}
+        sourceUrl={project.sourceUrl}
+      />
+    ))}
+  </div>
+</section>
