@@ -321,10 +321,18 @@ img {
 /* ============================================
    Enhancements (animations, effects, etc.)
    ============================================ */
+/* ============================================
+   Enhancements — add these at the end of global.css
+   ============================================ */
 
 /* 1. Hero name gradient — white fading to accent
       Subtle but it catches the eye. */
+/* Hero gradient — applied per-span so clip-path works */
 .hero-name {
+  /* no gradient here — it's on the children */
+}
+.hero-static,
+.hero-reveal {
   background: linear-gradient(135deg, #e4e4e7 30%, #818cf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -340,27 +348,26 @@ img {
   margin-left: 4px;
   vertical-align: baseline;
   position: relative;
-  bottom: 4px;
+  bottom: -2px;
 }
 
 /* Hero name reveal: L. → Luis Rodriguez. */
-.hero-reveal {
-  display: inline-block;
-  max-width: 0;
-  overflow: hidden;
-  vertical-align: bottom;
-  white-space: nowrap;
-  transition: max-width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+@keyframes reveal-text {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
 }
-.hero-reveal.show {
-  max-width: 600px;
+
+.hero-reveal {
+  clip-path: inset(0 100% 0 0);
+  animation: reveal-text 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  /* animation-delay: 1s; */
 }
 
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal {
-    max-width: none;
-    transition: none;
+    clip-path: none;
+    animation: none;
   }
 }
 
