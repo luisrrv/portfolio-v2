@@ -26,23 +26,23 @@
     }
   ],
   "other": [
+	{
+	"title": "Reflect",
+	"stack": "React · Three.js",
+	"liveUrl": "https://reflect-orb.netlify.app",
+	"sourceUrl": "https://github.com/luisrrv/reflect"
+	},
+	{
+	"title": "Rubber Ducking",
+	"stack": "Chrome Extension · JavaScript",
+	"liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
+	"sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
+	},
     {
       "title": "Ally Maps",
       "stack": "Rails · PostgreSQL · Google Maps",
-      "liveUrl": "https://allymaps.herokuapp.com/",
+      "liveUrl": null,
       "sourceUrl": "https://github.com/luisrrv/allymaps"
-    },
-    {
-      "title": "Rubber Ducking",
-      "stack": "Chrome Extension · JavaScript",
-      "liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
-      "sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
-    },
-    {
-      "title": "Reflect",
-      "stack": "React · Three.js",
-      "liveUrl": "https://rodluis.com/#/reflect",
-      "sourceUrl": "https://github.com/luisrrv/portfolio/blob/main/src/pages/Reflect.tsx"
     }
   ]
 }
