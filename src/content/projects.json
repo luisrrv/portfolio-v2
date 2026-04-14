@@ -4,7 +4,7 @@
       "title": "FootyPulse",
       "description": "Follow football players and get daily stat digests via automated pipelines.",
       "image": "/images/footypulse.webp",
-      "tags": ["Next.js", "Supabase", "GitHub Actions"],
+      "tags": ["Next.js", "Supabase", "Discord API", "GitHub Actions"],
       "liveUrl": "https://footypulse.netlify.app",
       "sourceUrl": "https://github.com/luisrrv/footy-pulse"
     },
@@ -28,7 +28,7 @@
   "other": [
 	{
 	"title": "OP Chapter Bot",
-	"stack": "Node.js · Supabase · Slack Bot · Discord Bot",
+	"stack": "Node.js · Supabase · Slack API · Discord API",
 	"liveUrl": null,
 	"sourceUrl": "https://github.com/luisrrv/op-chapter-bot"
 	},
