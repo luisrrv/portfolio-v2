@@ -27,6 +27,12 @@
   ],
   "other": [
 	{
+	"title": "OP Chapter Bot",
+	"stack": "Node.js · Supabase · Slack Bot · Discord Bot",
+	"liveUrl": null,
+	"sourceUrl": "https://github.com/luisrrv/op-chapter-bot"
+	},
+	{
 	"title": "Reflect",
 	"stack": "React · Three.js",
 	"liveUrl": "https://reflect-orb.netlify.app",
