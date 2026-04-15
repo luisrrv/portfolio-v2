@@ -105,7 +105,7 @@ img {
 }
 
 .hero-name {
-  font-size: clamp(32px, 5vw, 80px);
+  font-size: clamp(40px, 5vw, 80px);
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -369,6 +369,13 @@ img {
   vertical-align: baseline;
   position: relative;
   bottom: -2px;
+  animation: fade-in 1s ease 0.3s both;
+}
+
+/* Name dot fade in */
+@keyframes fade-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 
 /* Hero name reveal: L. → Luis Rodriguez. */
