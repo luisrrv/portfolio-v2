@@ -43,12 +43,6 @@
 	"stack": "Chrome Extension · JavaScript",
 	"liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
 	"sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
-	},
-    {
-      "title": "Ally Maps",
-      "stack": "Rails · PostgreSQL · Google Maps",
-      "liveUrl": null,
-      "sourceUrl": "https://github.com/luisrrv/allymaps"
-    }
+	}
   ]
 }
