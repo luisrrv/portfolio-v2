@@ -14,8 +14,8 @@
 /* --- Tokens (HIG Dark Mode + Liquid Glass) --- */
 :root {
   --bg:            #000000;
-  --bg-secondary:  #1C1C1E;
-  --bg-tertiary:   #2C2C2E;
+  --bg-secondary:  #17171c;
+  --bg-tertiary:   #2a2a31;
   --bg-hover:      rgba(120, 120, 128, 0.16);
 
   --text:          #FFFFFF;
@@ -58,8 +58,8 @@ body {
   line-height: 1.53;
   color: var(--text);
   background:
-    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(129, 140, 248, 0.07), transparent),
-    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(99, 102, 241, 0.05), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(129, 140, 248, 0.12), transparent),
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(99, 102, 241, 0.10), transparent),
     var(--bg);
 }
 
@@ -125,7 +125,7 @@ img {
 
 .hero-links {
   display: flex;
-  gap: 24px;
+  /* gap: 24px; */
   margin-top: 28px;
   align-items: center;
 }
@@ -163,6 +163,10 @@ img {
   border: none;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow:
+	inset 0 0.5px 0 var(--glass-specular),
+	0 0 0 0.5px rgba(99, 99, 99, 0.3),
+	0 4px 16px rgba(0, 0, 0, 0.3);
   transition: transform var(--duration) var(--spring),
               background var(--duration) var(--spring),
               box-shadow var(--duration) var(--spring);
