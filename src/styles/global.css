@@ -150,6 +150,11 @@ img {
   fill: currentColor;
 }
 
+.hero-links .github svg {
+  width: 26px;
+  height: 26px;
+}
+
 /* --- Featured Work Grid --- */
 .project-grid {
   display: grid;
