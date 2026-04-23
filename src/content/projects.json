@@ -1,5 +1,13 @@
 {
   "featured": [
+	{
+	"title": "Web-to-LINE Chat Relay",
+	"description": "Real-time web chat interface that routes messages to LINE with two-way replies.",
+	"image": "/images/chat-relay.webp",
+	"tags": ["React", "Node.js", "WebSocket", "LINE Messaging API"],
+	"liveUrl": "https://anon2me.netlify.app",
+	"sourceUrl": "https://github.com/luisrrv/chat2me"
+	},
     {
       "title": "FootyPulse",
       "description": "Follow football players and get daily stat digests via automated pipelines.",
@@ -7,14 +15,6 @@
       "tags": ["Next.js", "Supabase", "Discord API", "GitHub Actions"],
       "liveUrl": "https://footypulse.netlify.app",
       "sourceUrl": "https://github.com/luisrrv/footy-pulse"
-    },
-    {
-      "title": "Web-to-LINE Chat Relay",
-      "description": "Real-time web chat interface that routes messages to LINE with two-way replies.",
-      "image": "/images/chat-relay.webp",
-      "tags": ["React", "Node.js", "WebSocket", "LINE Messaging API"],
-      "liveUrl": "https://anon2me.netlify.app",
-      "sourceUrl": "https://github.com/luisrrv/chat2me"
     },
     {
       "title": "Bicho Bot",
