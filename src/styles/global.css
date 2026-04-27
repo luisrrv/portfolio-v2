@@ -295,6 +295,7 @@ img {
   padding: 2px 8px;
   margin: 0 -8px;
   border-radius: var(--radius-sm);
+  white-space: nowrap;
   transition: background var(--duration) var(--spring),
               color var(--duration) var(--spring),
               box-shadow var(--duration) var(--spring);
