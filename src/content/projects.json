@@ -21,7 +21,7 @@
       "description": "LINE LIFF mini-app for splitting bills and sharing results directly in group chats.",
       "image": "/images/warikan.webp",
       "tags": ["TypeScript", "Vite", "LINE LIFF Miniapp"],
-      "liveUrl": null,
+      "liveUrl": "https://github.com/luisrrv/warikan",
       "sourceUrl": "https://github.com/luisrrv/warikan"
     }
   ],
