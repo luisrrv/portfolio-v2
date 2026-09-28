@@ -1,31 +1,28 @@
-# rodluis.com
+# lrod.dev
 
-Personal portfolio — built with Astro. Zero client JavaScript, 17KB total page weight.
+Professional portfolio — built with Astro. Zero client JavaScript, ~10KB HTML with CSS inlined.
 
-**Live:** [rodluis.com](https://rodluis.com)
+**Live:** [lrod.dev](https://lrod.dev)
 
 ## Stack
 
 - **Astro 5** — static site generator, zero JS output
-- **Vanilla CSS** — HIG+LiquidGlass-aligned design system, ~5KB inlined
+- **Vanilla CSS** — small token-based design system, inlined
 - **GitHub Pages** — hosting via Actions workflow
 
 ## Design
 
-CSS-only design system aligned with [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/):
+- Monospace throughout (system `ui-monospace` stack, no web fonts), content capped at 72ch
+- The page sits in a bordered window with a flat offset shadow, on a dotted "desk" backdrop
+- Dark-first palette with one accent (jade `#5fbf9b`) used only for links, focus, and markers
+- Dashed rules between sections; no motion beyond hover underlines
 
-- Dark mode layered elevation (no borders, background differentiation)
-- Apple's opacity-based text hierarchy
-- Spring-curve transitions (`cubic-bezier(0.2, 0.8, 0.2, 1)`)
-- 44px minimum tap targets
-- Pill-shaped tags, 0.5px hairline separators
-- Scroll-driven hero parallax and section marker rotation (CSS `animation-timeline`)
-- `prefers-reduced-motion` respected throughout
+Tokens live at the top of `src/styles/global.css`.
 
 ## Build output
 
 ```
-dist/index.html    17KB (entire page, CSS inlined, zero external requests)
+dist/index.html    ~10KB (entire page, CSS inlined, zero JS)
 ```
 
 ## Project structure
@@ -33,10 +30,11 @@ dist/index.html    17KB (entire page, CSS inlined, zero external requests)
 ```
 src/
 ├── components/
-│   ├── Hero.astro            # Branded L. → Luis Rodriguez reveal
-│   ├── FeaturedWork.astro    # Project card grid
+│   ├── Hero.astro            # Name, role, links
+│   ├── Experience.astro      # What I work on
+│   ├── FeaturedWork.astro    # Featured projects
 │   ├── ProjectCard.astro     # Individual project card
-│   ├── About.astro           # Bio + hoverable tech keywords
+│   ├── About.astro           # Short bio
 │   ├── OtherProjects.astro   # Compact project list
 │   └── Footer.astro
 ├── content/

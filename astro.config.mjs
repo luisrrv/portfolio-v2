@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://rodluis.com',
+  site: 'https://lrod.dev',
   build: {
     inlineStylesheets: 'always', // Inlines all CSS — eliminates render-blocking request
   },

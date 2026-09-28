@@ -1,54 +1,68 @@
 {
   "featured": [
-	{
-	"title": "Web-to-LINE Chat Relay",
-	"description": "Real-time web chat interface that routes messages to LINE with two-way replies.",
-	"image": "/images/chat-relay.webp",
-	"tags": ["React", "Node.js", "WebSocket", "LINE Messaging API"],
-	"liveUrl": "https://anon2me.netlify.app",
-	"sourceUrl": "https://github.com/luisrrv/chat2me"
-	},
+    {
+      "title": "Web-to-LINE Chat Relay",
+      "description": "Real-time web chat that routes messages to LINE, with two-way replies.",
+      "image": "/images/chat-relay.webp",
+      "tags": [
+        "React",
+        "Node.js",
+        "WebSocket",
+        "LINE Messaging API"
+      ],
+      "liveUrl": "https://anon2me.netlify.app",
+      "sourceUrl": "https://github.com/luisrrv/chat2me"
+    },
     {
       "title": "FootyPulse",
-      "description": "Follow football players and get daily stat digests via automated pipelines.",
+      "description": "Follow football players and get daily stat digests from automated pipelines.",
       "image": "/images/footypulse.webp",
-      "tags": ["Next.js", "Supabase", "Discord API", "GitHub Actions"],
+      "tags": [
+        "Next.js",
+        "Supabase",
+        "Discord API",
+        "GitHub Actions"
+      ],
       "liveUrl": "https://footypulse.netlify.app",
       "sourceUrl": "https://github.com/luisrrv/footy-pulse"
     },
     {
       "title": "Warikan",
-      "description": "LINE LIFF mini-app for splitting bills and sharing results directly in group chats.",
+      "description": "LINE LIFF mini-app for splitting bills and sharing the result in group chats.",
       "image": "/images/warikan.webp",
-      "tags": ["TypeScript", "Vite", "LINE LIFF Miniapp"],
-      "liveUrl": "https://github.com/luisrrv/warikan",
+      "tags": [
+        "TypeScript",
+        "Vite",
+        "LINE LIFF"
+      ],
+      "liveUrl": null,
       "sourceUrl": "https://github.com/luisrrv/warikan"
     }
   ],
   "other": [
-	{
-	"title": "Bicho Bot",
-	"stack": "Python · AWS Lambda · Twitter API",
-	"liveUrl": "https://twitter.com/bicho_bot",
-	"sourceUrl": "https://github.com/luisrrv/bicho-bot-lambda"
+    {
+      "title": "Bicho Bot",
+      "stack": "Python · AWS Lambda · Twitter API",
+      "liveUrl": "https://twitter.com/bicho_bot",
+      "sourceUrl": "https://github.com/luisrrv/bicho-bot-lambda"
     },
-	{
-	"title": "OP Chapter Bot",
-	"stack": "Node.js · Supabase · Slack API · Discord API",
-	"liveUrl": null,
-	"sourceUrl": "https://github.com/luisrrv/op-chapter-bot"
-	},
-	{
-	"title": "Reflect",
-	"stack": "React · Three.js",
-	"liveUrl": "https://reflect-orb.netlify.app",
-	"sourceUrl": "https://github.com/luisrrv/reflect"
-	},
-	{
-	"title": "Rubber Ducking",
-	"stack": "Chrome Extension · JavaScript",
-	"liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
-	"sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
-	}
+    {
+      "title": "OP Chapter Bot",
+      "stack": "Node.js · Supabase · Slack API · Discord API",
+      "liveUrl": null,
+      "sourceUrl": "https://github.com/luisrrv/op-chapter-bot"
+    },
+    {
+      "title": "Reflect",
+      "stack": "React · Three.js",
+      "liveUrl": "https://reflect-orb.netlify.app",
+      "sourceUrl": "https://github.com/luisrrv/reflect"
+    },
+    {
+      "title": "Rubber Ducking",
+      "stack": "Chrome Extension · JavaScript",
+      "liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
+      "sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
+    }
   ]
 }

@@ -38,25 +38,16 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Font preload (eliminates FOIT) -->
-    <link
-      rel="preload"
-      href="/fonts/inter-variable.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
     <!-- Theme color -->
-    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="theme-color" content="#0d0c0b" />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Luis Rodriguez",
-      "url": "https://rodluis.com",
-      "jobTitle": "Full-Stack Software Engineer",
+      "url": "https://lrod.dev",
+      "jobTitle": "Software Engineer",
       "sameAs": [
         "https://github.com/luisrrv",
         "https://www.linkedin.com/in/luisrrv/"
