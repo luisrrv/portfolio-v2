@@ -41,12 +41,6 @@
   ],
   "other": [
     {
-      "title": "Bicho Bot",
-      "stack": "Python · AWS Lambda · Twitter API",
-      "liveUrl": "https://twitter.com/bicho_bot",
-      "sourceUrl": "https://github.com/luisrrv/bicho-bot-lambda"
-    },
-    {
       "title": "OP Chapter Bot",
       "stack": "Node.js · Discord · Slack · Supabase · GitHub Actions",
       "liveUrl": null,
@@ -57,12 +51,6 @@
       "stack": "React · Three.js",
       "liveUrl": "https://reflect-orb.netlify.app",
       "sourceUrl": "https://github.com/luisrrv/reflect"
-    },
-    {
-      "title": "Rubber Ducking",
-      "stack": "Chrome Extension · JavaScript",
-      "liveUrl": "https://chrome.google.com/webstore/detail/rubberducking/ilnajmkjbglgobggkhahkpgomnjjegpe",
-      "sourceUrl": "https://github.com/luisrrv/Rubber-Ducking-Chrome-Extension"
     }
   ]
 }

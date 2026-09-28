@@ -97,6 +97,7 @@ h2 {
   margin-bottom: 20px;
 }
 h2::before { content: "## "; color: var(--accent); }
+.h2-meta { color: var(--fg-dim); letter-spacing: .04em; }
 
 .dim { color: var(--fg-dim); }
 
@@ -157,7 +158,19 @@ h2::before { content: "## "; color: var(--accent); }
 /* --- About --- */
 .about p { color: var(--fg-dim); }
 .about p + p { margin-top: 12px; }
-.about .langs { font-size: .8125rem; }
+.facts {
+  display: grid;
+  grid-template-columns: 11ch 1fr;
+  gap: 6px 16px;
+  margin-top: 20px;
+  font-size: .8125rem;
+}
+.facts dt { color: var(--fg-dim); }
+.facts dd { margin: 0; color: var(--fg); }
+@media (max-width: 600px) {
+  .facts { grid-template-columns: 1fr; gap: 2px; }
+  .facts dd + dt { margin-top: 8px; }
+}
 
 /* --- Other projects --- */
 .rows { display: grid; }
