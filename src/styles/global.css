@@ -6,20 +6,20 @@
 
 :root {
   /* surfaces */
-  --bg-desk:   #0d0c0b;   /* backdrop behind the window */
-  --dot-desk:  #26231f;   /* dot grid on the desk */
-  --bg:        #161513;   /* the window */
-  --bg-raised: #1c1b18;   /* thumbnail wells */
-  --border:    #4a453c;   /* hard 1px window border */
-  --shadow:    #2b2823;   /* flat offset shadow; lighter than the desk so it reads on dark */
-  --rule:      #3a362f;   /* dashed separators */
+  --bg-desk:   #050505;   /* backdrop behind the window */
+  --dot-desk:  #1c1c1c;   /* dot grid on the desk */
+  --bg:        #1a1a1a;   /* the window */
+  --bg-raised: #212121;   /* thumbnail wells */
+  --border:    #454545;   /* hard 1px window border */
+  --shadow:    #2c2c2c;   /* flat offset shadow; lighter than the desk so it reads on dark */
+  --rule:      #363636;   /* dashed separators */
 
   /* text (contrast on --bg) */
-  --fg:        #e9e3d7;   /* 14.3:1 */
-  --fg-dim:    #948d7f;   /*  5.5:1 */
+  --fg:        #e8e8e6;   /* 14.2:1 */
+  --fg-dim:    #959592;   /*  5.8:1 */
 
   /* accent: links, focus, heading markers, list bullets */
-  --accent:    #5fbf9b;   /*  8.2:1 */
+  --accent:    #5fbf9b;   /*  7.8:1 */
 
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
