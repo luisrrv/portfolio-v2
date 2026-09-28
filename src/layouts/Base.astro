@@ -6,6 +6,8 @@ interface Props {
 
 const { title, description } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/og-image.png', Astro.site);
+const ogImageAlt = 'Luis Rodriguez, Software Engineer in Tokyo. lrod.dev';
 ---
 
 <!doctype html>
@@ -13,30 +15,39 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="Luis Rodriguez" />
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="lrod.dev" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content={new URL('/og-image.png', Astro.site)} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogImageAlt} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL('/og-image.png', Astro.site)} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={ogImageAlt} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#0d0c0b" />
@@ -48,6 +59,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       "name": "Luis Rodriguez",
       "url": "https://lrod.dev",
       "jobTitle": "Software Engineer",
+      "address": { "@type": "PostalAddress", "addressLocality": "Tokyo", "addressCountry": "JP" },
+      "knowsLanguage": ["en", "es", "ja"],
       "sameAs": [
         "https://github.com/luisrrv",
         "https://www.linkedin.com/in/luisrrv/"
