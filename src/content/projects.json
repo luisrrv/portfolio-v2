@@ -2,11 +2,11 @@
   "featured": [
     {
       "title": "Web-to-LINE Chat Relay",
-      "description": "Real-time web chat that routes messages to LINE, with two-way replies.",
+      "description": "I wanted anyone to be able to message me on LINE anonymously from a web page. A WebSocket bridge to LINE webhooks, load-tested to 1,000 concurrent connections.",
       "image": "/images/chat-relay.webp",
       "tags": [
-        "React",
         "Node.js",
+        "Express",
         "WebSocket",
         "LINE Messaging API"
       ],
@@ -15,7 +15,7 @@
     },
     {
       "title": "FootyPulse",
-      "description": "Follow football players and get daily stat digests from automated pipelines.",
+      "description": "As a football fan, I wanted a daily digest to compare my favorite players. Stats are pulled and delivered to Discord by a scheduled GitHub Actions job.",
       "image": "/images/footypulse.webp",
       "tags": [
         "Next.js",
@@ -28,14 +28,14 @@
     },
     {
       "title": "Warikan",
-      "description": "LINE LIFF mini-app for splitting bills and sharing the result in group chats.",
+      "description": "Built to split the bill quickly at hangouts with friends, sharing the result straight into the LINE group chat. No backend, ~35KB.",
       "image": "/images/warikan.webp",
       "tags": [
         "TypeScript",
         "Vite",
         "LINE LIFF"
       ],
-      "liveUrl": null,
+      "liveUrl": "https://warikan-jp.netlify.app",
       "sourceUrl": "https://github.com/luisrrv/warikan"
     }
   ],
@@ -48,7 +48,7 @@
     },
     {
       "title": "OP Chapter Bot",
-      "stack": "Node.js · Supabase · Slack API · Discord API",
+      "stack": "Node.js · Discord · Slack · Supabase · GitHub Actions",
       "liveUrl": null,
       "sourceUrl": "https://github.com/luisrrv/op-chapter-bot"
     },
