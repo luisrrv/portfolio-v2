@@ -1,6 +1,19 @@
 {
   "featured": [
     {
+      "title": "Component Playground",
+      "description": "Page builders and plugin systems let users customize the UI with their own code, and have to run it without putting the rest of the app at risk. I built this to show how: a sandboxed React playground with nine failure cases you can trigger.",
+      "image": "/images/component-playground.webp",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Zod"
+      ],
+      "liveUrl": "https://playground.lrod.dev",
+      "sourceUrl": "https://github.com/luisrrv/component-playground"
+    },
+    {
       "title": "Web-to-LINE Chat Relay",
       "description": "I wanted anyone to be able to message me on LINE anonymously from a web page. A WebSocket bridge to LINE webhooks, load-tested to 1,000 concurrent connections.",
       "image": "/images/chat-relay.webp",
