@@ -1,18 +1,9 @@
 ---
-import Base from '../layouts/Base.astro';
+import Window from '../layouts/Window.astro';
 ---
 
-<Base title="Not found — lrod.dev" description="This page doesn't exist.">
-  <div class="frame">
-    <header class="titlebar">
-      <span>lrod.dev</span>
-    </header>
-    <div class="content">
-      <main class="measure">
-        <h1>404</h1>
-        <p class="hero-lede">This page doesn't exist.</p>
-        <p class="links" style="margin-top: 20px;"><a href="/">← back to lrod.dev</a></p>
-      </main>
-    </div>
-  </div>
-</Base>
+<Window title="Not found — lrod.dev" description="This page doesn't exist." footer={false}>
+  <h1>404</h1>
+  <p class="hero-lede">This page doesn't exist.</p>
+  <p class="links" style="margin-top: 20px;"><a href="/">← back to lrod.dev</a></p>
+</Window>

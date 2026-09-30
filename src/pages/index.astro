@@ -1,35 +1,25 @@
 ---
-import Base from '../layouts/Base.astro';
+import Window from '../layouts/Window.astro';
 import Hero from '../components/Hero.astro';
 import Experience from '../components/Experience.astro';
 import FeaturedWork from '../components/FeaturedWork.astro';
 import About from '../components/About.astro';
 import OtherProjects from '../components/OtherProjects.astro';
-import Footer from '../components/Footer.astro';
 ---
 
-<Base
+<Window
   title="Luis Rodriguez — Software Engineer"
   description="Software engineer in Tokyo building customer-facing products and developer platforms."
 >
-  <div class="frame">
-    <header class="titlebar">
-      <span>lrod.dev</span>
-      <nav aria-label="Sections">
-        <a href="#experience">experience</a>
-        <a href="#work">projects</a>
-        <a href="#about">about</a>
-      </nav>
-    </header>
-    <div class="content">
-      <main class="measure">
-        <Hero />
-        <Experience />
-        <FeaturedWork />
-        <OtherProjects />
-        <About />
-      </main>
-      <Footer />
-    </div>
-  </div>
-</Base>
+  <nav slot="nav" aria-label="Sections">
+    <a href="#experience">experience</a>
+    <a href="#work">projects</a>
+    <a href="#about">about</a>
+    <a href="/notes/">notes</a>
+  </nav>
+  <Hero />
+  <Experience />
+  <FeaturedWork />
+  <OtherProjects />
+  <About />
+</Window>

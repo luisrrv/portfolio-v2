@@ -1,0 +1,60 @@
+---
+import { render } from 'astro:content';
+import Window from '../../layouts/Window.astro';
+import { getNotes, formatDate, type Note } from '../../lib/notes';
+
+export async function getStaticPaths() {
+  const notes = await getNotes();
+  return notes.map((note) => ({ params: { slug: note.id }, props: { note } }));
+}
+
+interface Props { note: Note }
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+const { title, description, date, updated, draft } = note.data;
+const url = new URL(`/notes/${note.id}/`, Astro.site);
+---
+
+<Window title={`${title} — Luis Rodriguez`} description={description} ogType="article">
+  <Fragment slot="head">
+    <meta property="article:published_time" content={date.toISOString()} />
+    {updated && <meta property="article:modified_time" content={updated.toISOString()} />}
+    <meta property="article:author" content="Luis Rodriguez" />
+    {draft && <meta name="robots" content="noindex" />}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": title,
+      "description": description,
+      "datePublished": date.toISOString(),
+      ...(updated && { "dateModified": updated.toISOString() }),
+      "url": url.href,
+      "mainEntityOfPage": url.href,
+      "author": { "@type": "Person", "name": "Luis Rodriguez", "url": "https://lrod.dev" },
+    })} />
+  </Fragment>
+
+  <nav slot="nav" aria-label="Site">
+    <a href="/">home</a>
+    <a href="/notes/">notes</a>
+  </nav>
+
+  <article>
+    <header class="note-head">
+      <p class="note-meta">
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+        {updated && <span> · updated <time datetime={updated.toISOString()}>{formatDate(updated)}</time></span>}
+        {draft && <span class="badge">draft</span>}
+      </p>
+      <h1>{title}</h1>
+      <p class="hero-lede">{description}</p>
+    </header>
+
+    <div class="prose section">
+      <Content />
+    </div>
+  </article>
+
+  <p class="links note-back"><a href="/notes/">← all notes</a></p>
+</Window>

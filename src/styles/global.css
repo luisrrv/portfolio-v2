@@ -17,6 +17,7 @@
   /* text (contrast on --bg) */
   --fg:        #e8e8e6;   /* 14.2:1 */
   --fg-dim:    #959592;   /*  5.8:1 */
+  --fg-prose:  #cfcfcc;   /* body copy in notes; softer than --fg for long reads */
 
   /* accent: links, focus, heading markers, list bullets */
   --accent:    #5fbf9b;   /*  7.8:1 */
@@ -74,7 +75,10 @@ a:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
 }
 .titlebar nav { display: flex; gap: 16px; }
 .titlebar nav a { color: var(--fg-dim); }
-.titlebar nav a:hover { color: var(--fg); }
+.titlebar nav a:hover,
+.titlebar nav a[aria-current="page"] { color: var(--fg); }
+.titlebar-home { color: var(--fg-dim); }
+.titlebar-home:hover { color: var(--fg); text-decoration: none; }
 
 .content { padding: 56px var(--pad-x) 40px; }
 .measure { max-width: var(--measure); }
@@ -199,6 +203,116 @@ h2::before { content: "## "; color: var(--accent); }
   color: var(--fg-dim);
 }
 
+/* --- Notes: index --- */
+.note-list { list-style: none; padding: 0; display: grid; gap: 22px; }
+.note-list li { display: grid; grid-template-columns: 11ch 1fr; gap: 16px; align-items: baseline; }
+.note-date, .note-meta { font-size: .8125rem; color: var(--fg-dim); }
+.note-summary { color: var(--fg-dim); margin-top: 4px; }
+.badge {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 0 6px;
+  border: 1px dashed var(--accent);
+  font-size: .75rem;
+  color: var(--accent);
+  vertical-align: 1px;
+}
+
+/* --- Notes: post --- */
+.note-head h1 { margin-top: 8px; }
+.note-back { margin-top: 44px; }
+
+.prose { color: var(--fg); }
+.prose > * + * { margin-top: 16px; }
+.prose p, .prose li { color: var(--fg-prose); }
+
+.prose h2, .prose h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: var(--fg);
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.prose h2::before { content: "## "; color: var(--accent); }
+.prose h3 { margin-top: 28px; }
+.prose h3::before { content: "### "; color: var(--accent); }
+.prose h2 + *, .prose h3 + * { margin-top: 12px; }
+
+.prose ul, .prose ol { padding-left: 0; display: grid; gap: 6px; }
+.prose ol { padding-left: 3ch; }
+.prose li > ul { padding-left: 2ch; }
+.prose ul { list-style: none; }
+.prose ul > li { padding-left: 2ch; text-indent: -2ch; }
+.prose ul > li::before { content: "- "; color: var(--accent); }
+.prose ol > li::marker { color: var(--accent); }
+.prose li > ul, .prose li > ol { margin-top: 6px; }
+
+.prose strong { color: var(--fg); font-weight: 600; }
+.prose em { font-style: italic; }
+
+.prose blockquote {
+  padding: 2px 0 2px 2ch;
+  border-left: 1px dashed var(--accent);
+}
+.prose blockquote p { color: var(--fg-dim); }
+
+.prose hr { border: 0; border-top: 1px dashed var(--rule); margin: 36px 0; }
+
+.prose :not(pre) > code {
+  padding: 1px 5px;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  font-size: .875em;
+  color: var(--fg);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.prose pre {
+  padding: 14px 16px;
+  border: 1px solid var(--rule);
+  background: var(--bg-raised) !important;
+  font-size: .8125rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  tab-size: 2;
+}
+.prose pre code { font: inherit; }
+
+.prose img, .prose svg, .prose figure > img {
+  border: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+.prose figure { margin-left: 0; margin-right: 0; }
+.prose figcaption { margin-top: 8px; font-size: .8125rem; color: var(--fg-dim); }
+
+.prose .table-wrap, .prose table { display: block; overflow-x: auto; }
+.prose table { border-collapse: collapse; font-size: .8125rem; }
+.prose th, .prose td {
+  padding: 6px 14px 6px 0;
+  border-bottom: 1px dashed var(--rule);
+  text-align: left;
+  vertical-align: top;
+}
+.prose th { font-weight: 400; color: var(--fg-dim); }
+.prose td { color: var(--fg-prose); }
+
+/* Syntax colors for Shiki's css-variables theme: mostly grays, accent on keywords. */
+:root {
+  --astro-code-foreground:        var(--fg);
+  --astro-code-background:        var(--bg-raised);
+  --astro-code-token-keyword:     var(--accent);
+  --astro-code-token-string:      #b5cdc2;
+  --astro-code-token-string-expression: #b5cdc2;
+  --astro-code-token-comment:     #7a7a77;
+  --astro-code-token-constant:    #d8cfb8;
+  --astro-code-token-function:    #e8e8e6;
+  --astro-code-token-parameter:   #bdbdb9;
+  --astro-code-token-punctuation: #959592;
+  --astro-code-token-link:        var(--accent);
+}
+
 /* --- Small screens --- */
 @media (max-width: 600px) {
   body { padding: 24px 10px; }
@@ -209,5 +323,7 @@ h2::before { content: "## "; color: var(--accent); }
   .proj { grid-template-columns: 1fr; gap: 12px; }
   .row { grid-template-columns: 1fr auto; }
   .row-stack { grid-column: 1 / -1; grid-row: 2; }
+  .note-list li { grid-template-columns: 1fr; gap: 2px; }
+  .prose pre { margin-left: calc(-1 * var(--pad-x) + 8px); margin-right: calc(-1 * var(--pad-x) + 8px); }
 }
 

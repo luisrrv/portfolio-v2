@@ -11,7 +11,8 @@
         "Zod"
       ],
       "liveUrl": "https://playground.lrod.dev",
-      "sourceUrl": "https://github.com/luisrrv/component-playground"
+      "sourceUrl": "https://github.com/luisrrv/component-playground",
+      "noteUrl": "/notes/running-untrusted-components/"
     },
     {
       "title": "Web-to-LINE Chat Relay",

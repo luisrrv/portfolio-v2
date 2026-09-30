@@ -1,0 +1,29 @@
+---
+import Base from './Base.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogType?: 'website' | 'article';
+  footer?: boolean;
+}
+
+const { title, description, ogType, footer = true } = Astro.props;
+---
+
+<Base title={title} description={description} ogType={ogType}>
+  <slot name="head" slot="head" />
+  <div class="frame">
+    <header class="titlebar">
+      <a class="titlebar-home" href="/">lrod.dev</a>
+      <slot name="nav" />
+    </header>
+    <div class="content">
+      <main class="measure">
+        <slot />
+      </main>
+      {footer && <Footer />}
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,38 @@
+---
+import Window from '../../layouts/Window.astro';
+import { getNotes, formatDate } from '../../lib/notes';
+
+const notes = await getNotes();
+---
+
+<Window
+  title="Notes — Luis Rodriguez"
+  description="Write-ups on things I've built: what the problem was, what I tried, and the tradeoffs."
+>
+  <nav slot="nav" aria-label="Site">
+    <a href="/">home</a>
+    <a href="/notes/" aria-current="page">notes</a>
+  </nav>
+
+  <h1>Notes</h1>
+  <p class="hero-lede">Write-ups on things I've built: what the problem was, what I tried, and the tradeoffs.</p>
+
+  <section class="section">
+    {notes.length === 0 ? (
+      <p class="dim">Nothing here yet.</p>
+    ) : (
+      <ol class="note-list">
+        {notes.map((note) => (
+          <li>
+            <time class="note-date" datetime={note.data.date.toISOString()}>{formatDate(note.data.date)}</time>
+            <div>
+              <a href={`/notes/${note.id}/`}>{note.data.title}</a>
+              {note.data.draft && <span class="badge">draft</span>}
+              <p class="note-summary">{note.data.description}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    )}
+  </section>
+</Window>

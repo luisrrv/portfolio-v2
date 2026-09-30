@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   description: string;
+  ogType?: 'website' | 'article';
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogType = 'website' } = Astro.props;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const ogImage = new URL('/og-image.png', Astro.site);
 const ogImageAlt = 'Luis Rodriguez, Software Engineer in Tokyo. lrod.dev';
@@ -25,7 +26,7 @@ const ogImageAlt = 'Luis Rodriguez, Software Engineer in Tokyo. lrod.dev';
     <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="lrod.dev" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
@@ -66,6 +67,8 @@ const ogImageAlt = 'Luis Rodriguez, Software Engineer in Tokyo. lrod.dev';
         "https://www.linkedin.com/in/luisrrv/"
       ]
     })} />
+
+    <slot name="head" />
   </head>
   <body>
     <slot />

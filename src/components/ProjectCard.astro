@@ -6,9 +6,10 @@ interface Props {
   tags: string[];
   liveUrl?: string | null;
   sourceUrl: string;
+  noteUrl?: string;
 }
 
-const { title, description, image, tags, liveUrl, sourceUrl } = Astro.props;
+const { title, description, image, tags, liveUrl, sourceUrl, noteUrl } = Astro.props;
 ---
 
 <article class="proj">
@@ -29,6 +30,7 @@ const { title, description, image, tags, liveUrl, sourceUrl } = Astro.props;
     <p class="links">
       {liveUrl && <a href={liveUrl} target="_blank" rel="noopener">live ↗</a>}
       <a href={sourceUrl} target="_blank" rel="noopener">source ↗</a>
+      {noteUrl && <a href={noteUrl}>write-up</a>}
     </p>
   </div>
 </article>
