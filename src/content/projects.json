@@ -2,7 +2,7 @@
   "featured": [
     {
       "title": "Component Playground",
-      "description": "Page builders and plugin systems let users customize the UI with their own code, and have to run it without putting the rest of the app at risk. I built this to show how: a sandboxed React playground with nine failure cases you can trigger.",
+      "description": "Page builders and plugin systems let users customize the UI with their own code, and have to run it without putting the rest of the app at risk. I built this to show how: a sandboxed React playground with theming, slots and AI edits, and over a dozen failure cases you can trigger.",
       "image": "/images/component-playground.webp",
       "tags": [
         "React",
