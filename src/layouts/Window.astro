@@ -6,6 +6,7 @@ interface Props {
   title: string;
   description: string;
   ogType?: 'website' | 'article';
+  /** Also makes the window fill the screen, so the footer sits at the bottom of short pages. */
   footer?: boolean;
 }
 
@@ -14,7 +15,7 @@ const { title, description, ogType, footer = true } = Astro.props;
 
 <Base title={title} description={description} ogType={ogType}>
   <slot name="head" slot="head" />
-  <div class="frame">
+  <div class:list={["frame", { "frame-fill": footer }]}>
     <header class="titlebar">
       <a class="titlebar-home" href="/">lrod.dev</a>
       <slot name="nav" />

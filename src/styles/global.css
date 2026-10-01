@@ -32,7 +32,11 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; }
 
 html {
-  background: var(--bg-desk);
+  background-color: var(--bg-desk);
+  /* The dot grid lives on <html>, so it covers the whole viewport even when
+     the page is shorter than the screen. */
+  background-image: radial-gradient(var(--dot-desk) 1px, transparent 1px);
+  background-size: 18px 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -41,9 +45,6 @@ html {
 body {
   font: 1rem/1.65 var(--mono);
   color: var(--fg);
-  background-color: var(--bg-desk);
-  background-image: radial-gradient(var(--dot-desk) 1px, transparent 1px);
-  background-size: 18px 18px;
   padding: 48px 16px;
 }
 
@@ -62,7 +63,17 @@ a:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
   background: var(--bg);
   border: 1px solid var(--border);
   box-shadow: 8px 8px 0 var(--shadow);
+  /* Fill the screen on short pages so the footer sits at the bottom;
+     the empty space fills up as content grows. */
 }
+.frame-fill {
+  min-height: calc(100vh - 96px);
+  min-height: calc(100dvh - 96px);
+  display: flex;
+  flex-direction: column;
+}
+.frame-fill > .content { flex: 1; display: flex; flex-direction: column; }
+.frame-fill > .content > main { flex: 1; }
 
 .titlebar {
   display: flex;
@@ -319,6 +330,7 @@ h2::before { content: "## "; color: var(--accent); }
   :root { --pad-x: 20px; }
   .content { padding-top: 32px; padding-bottom: 28px; }
   .frame { box-shadow: 5px 5px 0 var(--shadow); }
+  .frame-fill { min-height: calc(100vh - 48px); min-height: calc(100dvh - 48px); }
   .titlebar { padding: 8px 14px; }
   .proj { grid-template-columns: 1fr; gap: 12px; }
   .row { grid-template-columns: 1fr auto; }

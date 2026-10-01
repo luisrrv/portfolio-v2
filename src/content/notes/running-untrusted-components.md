@@ -201,3 +201,5 @@ For production use, the next steps would be running the compiler in a Web Worker
 ## Try it
 
 The [playground](https://playground.lrod.dev) has a working example and one example per failure case, so you can watch each layer catch something. The [source and README](https://github.com/luisrrv/component-playground) go into each decision in more detail.
+
+A follow-up, [Themes, slots and AI edits for untrusted components](/notes/theming-slots-and-ai-edits/), covers customizing the component kit and letting an AI edit the code.
