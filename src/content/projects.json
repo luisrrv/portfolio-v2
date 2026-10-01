@@ -7,8 +7,8 @@
       "tags": [
         "React",
         "TypeScript",
-        "Vite",
-        "Zod"
+        "Zod",
+        "OpenAI API"
       ],
       "liveUrl": "https://playground.lrod.dev",
       "sourceUrl": "https://github.com/luisrrv/component-playground",
